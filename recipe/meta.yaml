@@ -1,5 +1,5 @@
 {% set name = "pyprecice" %}
-{% set version = "2.3.0.1" %}
+{% set version = "2.4.0.0" %}
 
 
 package:
@@ -8,15 +8,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyprecice-{{ version }}.tar.gz
-  sha256: 5c51797505be765660e3a294adc75d4e233eecc4d5b1441416c4d63cfeea0839
+  sha256: f89c47a78991f0e558b3b9a38b13746777380d45cb5ca58c3ba8c4d0cb88274e
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build: 
+  build:
     - {{ compiler('cxx') }}
   host:
     - cython
@@ -45,7 +45,7 @@ about:
   license: LGPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'Python language bindings for preCICE'
+  summary: Python language bindings for preCICE
   description: |
     This package provides python language bindings for the C++ library 
     preCICE. 
