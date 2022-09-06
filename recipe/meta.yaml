@@ -1,5 +1,5 @@
 {% set name = "pyprecice" %}
-{% set version = "2.4.0.0" %}
+{% set version = "2.5.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyprecice-{{ version }}.tar.gz
-  sha256: f89c47a78991f0e558b3b9a38b13746777380d45cb5ca58c3ba8c4d0cb88274e
+  sha256: a1e0273580fc9ace49c114a401498a6f58eece1265464fe2a2de24ee5889f64c
 
 build:
   number: 0
@@ -25,6 +25,7 @@ requirements:
     - pip
     - precice
     - python
+    - pkgconfig
   run:
     - mpi4py
     - numpy
