@@ -25,6 +25,7 @@ requirements:
     - pip
     - precice
     - python
+    - pkgconfig
   run:
     - mpi4py
     - numpy
