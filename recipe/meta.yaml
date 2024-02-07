@@ -30,6 +30,7 @@ requirements:
     - mpi4py
     - numpy
     - python
+    - cython
 
 test:
   commands:
