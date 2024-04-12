@@ -1,5 +1,5 @@
 {% set name = "pyprecice" %}
-{% set version = "3.0.0.0" %}
+{% set version = "3.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyprecice-{{ version }}.tar.gz
-  sha256: 83d8532dc4eb07fa8a6dce2138a692e37f1dc1b8ed3fc5f8ae5b9af846c10666
+  sha256: 563a7b4b31532f8a21094909709f552a35ebc20c1fd069f7326b6b2729717ea3
 
 build:
   number: 0
