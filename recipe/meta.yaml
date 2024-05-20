@@ -11,13 +11,14 @@ source:
   sha256: 563a7b4b31532f8a21094909709f552a35ebc20c1fd069f7326b6b2729717ea3
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - numpy
