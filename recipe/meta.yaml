@@ -21,7 +21,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - cython
-    - numpy
+    - numpy <2
     - packaging
     - pip
     - precice
@@ -29,7 +29,7 @@ requirements:
     - pkgconfig
   run:
     - mpi4py
-    - numpy
+    - numpy <2
     - python
     - cython
 
