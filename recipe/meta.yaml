@@ -23,6 +23,7 @@ requirements:
     - cython
     - numpy
     - packaging
+    - setuptools
     - pip
     - precice
     - python
