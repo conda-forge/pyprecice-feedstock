@@ -11,7 +11,7 @@ source:
   sha256: 8823081304c52f9a3dc2f2f5b314421842ca3d578ef18ca585f6fac883c3eeab
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -21,15 +21,16 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - cython
-    - numpy <2
+    - numpy
     - packaging
+    - setuptools
     - pip
     - precice
     - python
     - pkgconfig
   run:
     - mpi4py
-    - numpy <2
+    - numpy
     - python
     - cython
 
