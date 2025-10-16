@@ -1,5 +1,5 @@
 {% set name = "pyprecice" %}
-{% set version = "3.2.1" %}
+{% set version = "3.3.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyprecice-{{ version }}.tar.gz
-  sha256: 8823081304c52f9a3dc2f2f5b314421842ca3d578ef18ca585f6fac883c3eeab
+  sha256: 2fe8582fa3d27b42d995f5695721d01424a36874b5bd439ae776e84262283d94
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
