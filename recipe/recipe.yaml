@@ -1,0 +1,64 @@
+schema_version: 1
+
+context:
+  name: pyprecice
+  version: "3.4.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyprecice-${{ version }}.tar.gz
+  sha256: 13f6cb55efacb0032fa1f368bbfc3ad28e6c9a2205e2b7cb84cd58c5f6bd04ef
+
+build:
+  number: 1
+  skip: win
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  host:
+    - cython
+    - numpy
+    - packaging
+    - setuptools
+    - pip
+    - precice
+    - python
+    - pkgconfig
+  run:
+    - mpi4py
+    - numpy
+    - python
+    - cython
+
+tests:
+  - requirements:
+      run:
+        - pip
+    script:
+      - export OMPI_MCA_plm=isolated
+      - export OMPI_MCA_rmaps_base_oversubscribe=yes
+      - export OMPI_MCA_btl_vader_single_copy_mechanism=none
+      - python -c "import precice"
+      - pip check
+
+about:
+  license: LGPL-3.0-or-later
+  license_file: LICENSE.txt
+  summary: Python language bindings for preCICE
+  description: |
+    This package provides python language bindings for the C++ library
+    preCICE.
+  homepage: https://precice.org
+  repository: https://github.com/precice/python-bindings
+  documentation: https://precice.org/installation-bindings-python.html
+
+extra:
+  recipe-maintainers:
+    - IshaanDesai
+    - jan-janssen
