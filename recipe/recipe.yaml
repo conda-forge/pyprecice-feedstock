@@ -14,8 +14,9 @@ source:
 
 build:
   number: 0
-  skip: win
-  skip: match(python, "<3.12")
+  skip:
+    - win
+    - match(python, "<3.12")
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
