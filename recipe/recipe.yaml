@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyprecice
-  version: "3.4.0"
+  version: "3.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,11 +10,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyprecice-${{ version }}.tar.gz
-  sha256: 13f6cb55efacb0032fa1f368bbfc3ad28e6c9a2205e2b7cb84cd58c5f6bd04ef
+  sha256: 1778bfc8a586693331e99d5a57a62c4f9ed8d6f6f4b56ef158e9a27cc46eac0b
 
 build:
-  number: 1
-  skip: win
+  number: 0
+  skip:
+    - win
+    - match(python, "<3.12")
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
